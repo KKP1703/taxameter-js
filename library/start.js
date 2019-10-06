@@ -35,6 +35,8 @@ function start(taxameter) {
         }
 
         const elementer = {
+            firmaNavn: nyLabel("Firmanavn"),
+            prisModelNavn: nyLabel("Prisliste"),
             tid: nyLabel("Tid"),
             afstand: nyLabel("Km"),
             pris: nyLabel("Pris"),
@@ -81,8 +83,11 @@ function start(taxameter) {
                 const sekunder = ("00" + tidGaaet % 60).slice(-2);
                 const minutter = Math.floor(tidGaaet / 60);
                 elementer.tid.innerText = minutter + ":" + sekunder;
+                elementer.firmaNavn.innerText = taxameter.prisModelNavn();
             }
 
+            elementer.firmaNavn.innerText = taxameter.firmaNavn();
+            elementer.prisModelNavn.innerText = taxameter.prisModelNavn();
             elementer.afstand.innerText = Math.round(taxameter.afstand*1000)/1000;
             elementer.pris.innerText = Math.round(taxameter.beregnPris()*100)/100 + " DKK";
         }, 500);

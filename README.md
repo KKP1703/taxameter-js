@@ -1,37 +1,36 @@
 # Taxameter.js
 ## En opgave i Strategy Pattern
 
+
 ### Opgave 1
-KroneTaxa skal have udviklet et nyt stykke software til at beregne prisen på en taxa tur, og har bedt dig om hjælp. De har allerede et gammelt system til at vise data'en og interagere med systemet - altså skal de bare have hjælp til en lille del af systemet.
+Jeg har udfyldt de tomme funktioner og har implementeret prismodelen i beregnPris funktionen.
 
-Deres prismodel er rimelig simpel: 8,50 kr/km + 6,25 kr/min + 39 kr
-
-Implementér (dvs. færdiggør, udfyld de tomme funktioner) klassen Taxameter.js, herunder KroneTaxas prismodel.
 
 ### Opgave 2
-KroneTaxa vil også gerne bruge systemet til deres store vogne. Her er prisen: 12 kr/km + 6,67 kr/min + 69 kr.
+Jeg har oprettet ekstra .js og .html filer til krone-taxa-stor-vogn.
 
-Lav filerne krone-taxa-stor-vogn.js og krone-taxa-stor-vogn.html, og lav Taxameter.js om så den kan genbruges til både normale og store vogne. (Hint: Strategy Pattern. )
+Jeg har flyttet beregningen af pris til en prismodel class som taxameter klassen bliver startet med og som bliver kaldt fra beregnPris.
+
+Jeg har lavet to prismodeller til henholdsvis normal og stor vogn.
 
 
 ### Opgave 3
-KroneTaxas konkurrent CityBilen vil gerne købe dit system. De bruger samme brugergrænseflade, så det er lige til at sætte i deres biler. Dog er deres priser en smule anderledes: 4,50 kr pr. påbegyndt km + 7 kr pr. minut, og der er en minimumspris på 75 kr.
+Jeg har lavet to nye filer til citybilen.js og .html.
 
-Lav filerne city-bilen.js og city-bilen.html, og lav Taxameter.js om så den kan genbruges til alle 3 systemer.
+Jeg har lavet en ny prismodel til citybilen. Prismodellen indeholder minimumspris og oprunding af kilometer.
 
 
 ### Opgave 4
-KroneTaxas vil gerne være mere konkurrencedygtige på korte ture med normale vogn, og vil gerne ændre deres km pris til:
-5 kr for den første km, derefter 9 kr/km.
+Jeg har lavet om i kronetaxas primodel så den skelner mellem den første kilometer og de resterende.
 
-Lav de nødvendige ændringer i krone-taxa.js
+Min ændring ligger under taxameter.js, hvor alle prismodellerne er defineret.
 
 
 ### Bonus opgave 1 (overkommelig)
-Udvid Taxameter.js med et firmanavn og en tekstbeskrivelse af prismodellen. Dette kræver at start.js bliver ændret en smule.
+Jeg har tilføjet metoderne firmaNavn og prisModelNavn til Taxameter klassen som kalder tilsvarende metoder i prismodellerne.
 
 
 ### Bonus opgave 2 (svær)
-Elin Rejser har fået adgang til alle prismodellerne, og deres prismodel er altid den billigste af de andre modeller.
+Jeg har tilføjet en ny kunde og en ny prismodel.
 
-Lav filerne elin-rejser.js og elin-rejser.html og genbrug så meget som mulig kode fra de andre systemer uden at have duplikeret kode.
+I prismodellen kalder jeg de tre andre prismodeller og vælger den billigste. 
